@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTP Generator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="/otp_normal.js"></script>
+    <script type="module" src="otp_normal.js" defer></script>
 </head>
 <body>
-    <div class="flex-col">
-        <div class="flex-col">
-            OTP
+    <div class="page_bg flex-col">
+        <div class="flex-col flex-grow"></div>
+        <div class="flex-row">
+            <div class="flex-row flex-grow"></div>
+            <div class="page">
+                <div class="flex-row">
+                    <span>OTP</span>
+                    <div class="flex-grow"></div>
+                    <span id="otp-name"></span>
+                </div>
+            </div>
+            <div class="flex-row flex-grow"></div>
         </div>
+        <div class="flex-col flex-grow"></div>
     </div>
 </body>
 </html>

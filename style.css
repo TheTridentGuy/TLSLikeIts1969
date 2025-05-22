@@ -26,3 +26,31 @@ body {
     display: flex;
     flex-shrink: 1;
 }
+
+@media print {
+    body * {
+        visibility: hidden;
+        position: absolute;
+    }
+    
+    .page, .page * {
+        visibility: visible;
+        position: static;
+    }
+}
+.page_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+}
+.page {
+    background-color: white;
+    width: 8.5in;
+    height: 11in;
+    margin: 0;
+    padding: .5in;
+    break-after: page;
+}
