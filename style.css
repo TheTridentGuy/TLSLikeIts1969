@@ -2,6 +2,7 @@
     --color-light: #fff;
     --page-bg-color: #555;
     --button-bg-color: #aaa;
+    --button-bg-color-hover: #888;
     --button-fg-color: #fff;
 }
 body {
@@ -65,6 +66,10 @@ body {
     margin: 0.5vmin;
     text-align: center;
     font-weight: bold;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: var(--button-bg-color-hover);
 }
 @media print {
     body, .page_bg {
@@ -75,7 +80,6 @@ body {
         visibility: hidden;
         position: absolute;
     }
-    
     .page, .page * {
         visibility: visible;
         position: static;
