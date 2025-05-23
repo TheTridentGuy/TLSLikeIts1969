@@ -1,5 +1,6 @@
 :root {
     --color-light: #fff;
+    --color-dark: #000;
     --page-bg-color: #555;
     --button-bg-color: #aaa;
     --button-bg-color-hover: #888;
@@ -56,12 +57,14 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: var(--color-light);
+    backdrop-filter: blur(5px);
     padding: 1vmin;
     margin: 1vmin;
     border-radius: 1vmin;
 }
 .button {
+    user-select: none;
+    border: none;
     border-radius: 0.5vmin;
     color: var(--button-fg-color);
     background-color: var(--button-bg-color);
@@ -73,6 +76,24 @@ body {
 }
 .button:hover {
     background-color: var(--button-bg-color-hover);
+}
+.num-container {
+    flex-wrap: wrap;
+}
+.num {
+    font-family: monospace;
+    padding: .5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 1.5px;
+    border: 1px solid var(--color-dark);
+}
+input {
+    background-color: transparent;
+    border: none;
+    color: var(--color-light);
+    text-align: right;
+    width: 8ch;
 }
 @media print {
     body, .page_bg {
