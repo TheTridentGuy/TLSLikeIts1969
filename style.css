@@ -52,6 +52,7 @@ body {
     height: 11in;
     flex-grow: 0;
     flex-shrink: 0;
+    margin: .25in
 }
 .overlay {
     position: absolute;
@@ -81,7 +82,7 @@ body {
     flex-wrap: wrap;
 }
 .num {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     padding: .5px;
     padding-left: 4px;
     padding-right: 4px;
