@@ -14,12 +14,11 @@
             <div class="flex-row flex-grow"></div>
             <div class="page">
                 <div class="flex-row">
+                    <span id="otp-stats"></span>
                     <div class="flex-grow"></div>
                     <span id="otp-name"></span>
                 </div>
-                <div class="flex-row num-container" id="otp">
-
-                </div>
+                <div class="flex-row num-container" id="otp"></div>
             </div>
             <div class="flex-row flex-grow"></div>
         </div>
@@ -28,8 +27,15 @@
     <div class="overlay flex-col">
         <div id="generate" class="button">REGENERATE OTP</div>
         <div class="button flex-row">
+            [
+            <input type="number" id="otp-range-min" name="otp-range-min" min="0" max="99" value="0">
+            ,
+            <input type="number" id="otp-range-max" name="otp-range-max" min="0" max="99" value="99">
+            ]
+        </div>
+        <div class="button flex-row">
             LENGTH:
-            <input type="number" id="otp-nums" name="otp-nums" value="1000">
+            <input type="number" id="otp-len" name="otp-len" value="1100">
         </div>
         <div id="print" class="button">PRINT</div>
     </div>
