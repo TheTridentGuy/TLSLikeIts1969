@@ -110,3 +110,6 @@ input {
         position: static;
     }
 }
+#otp-canvas {
+    background-color: var(--color-light);
+}

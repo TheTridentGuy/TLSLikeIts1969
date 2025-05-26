@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="otp_mxw01.js" defer></script>
+</head>
+<body>
+    <div class="page_bg flex-col">
+        <div class="flex-col flex-grow"></div>
+        <div class="flex-row">
+            <div class="flex-row flex-grow"></div>
+            <canvas id="otp-canvas" width="384px"></canvas>
+            <div class="flex-row flex-grow"></div>
+        </div>
+        <div class="flex-col flex-grow"></div>
+    </div>
+    <div class="overlay flex-col">
+        <div id="generate" class="button">REGENERATE OTP</div>
+        <div class="button flex-row">
+            [
+            <input type="number" id="otp-range-min" name="otp-range-min" min="0" max="99" value="0">
+            ,
+            <input type="number" id="otp-range-max" name="otp-range-max" min="0" max="99" value="99">
+            ]
+        </div>
+        <div class="button flex-row">
+            LINES:
+            <input type="number" id="otp-len" name="otp-len" value="100">
+        </div>
+        <div class="flex-row">
+            <div id="connect" class="button">CONNECT</div>
+            <div id="print" class="button">PRINT</div>
+        </div>
+    </div>
+</body>
+</html>
