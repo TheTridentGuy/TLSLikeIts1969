@@ -35,7 +35,7 @@ function generate_otp(){
         }
 
         let page_stats = document.createElement("span");
-        page_stats.innerHTML = `${page}/${len} - range: [${min},${max}]`;
+        page_stats.innerHTML = `${page}/${len} [${min},${max}] x ${len*num_per_page}`;
 
         let spacer = document.createElement("div");
         spacer.classList.add("flex-grow");
@@ -57,5 +57,10 @@ $("#print").addEventListener("click", function(){
 });
 $("#generate").addEventListener("click", function(){
     generate_otp();
+});
+$$("input").forEach((input) => {
+    input.addEventListener("change", function() {
+        generate_otp();
+    });
 });
 generate_otp();
