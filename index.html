@@ -37,7 +37,7 @@
     <h3>Usage:</h3>
     <p>
         A one-time pad will consist of a series of numbers in a given range, i.e. 01, 02, 03, 04, etc. Each pad is also named for your conveience. Print 2 copies of a pad, and give one to your friend over a secure channel, ideally in person.
-        You also need to agree on a set of charachters to support, i.e. a-z, space, 0-9 and some symbols (this can be done publicly). You will turn this into a key by aligning it with sequential numbers:
+        You also need to agree on a set of characters to support, i.e. a-z, space, 0-9 and some symbols (this can be done publicly). You will turn this into a key by aligning it with sequential numbers:
         <table>
             <tr><td>00</td><td>01</td><td>...</td><td>25</td><td>26</td><td>27</td><td>...</td><td>37</td><td>38</td><td>39</td><td>40</td></tr>
             <tr><td>a</td><td>b</td><td>...</td><td>z</td><td>[space]</td><td>0</td><td>...</td><td>9</td><td>.</td><td>!</td><td>?</td></tr>
@@ -45,13 +45,13 @@
         TIP: keep this key in mind when you decide the range of your OTP. For example, our ideal range would be [0,40], and not a bit smaller.
         <br>
         <br>
-        Now to encode your message take the number of associated with the first charachter of your plaintext, and perform modular addition with the next number in your OTP, mod the length of your charachter set, then take the charachter associated with that number:
+        Now to encode your message take the number of associated with the first character of your plaintext, and perform modular addition with the next number in your OTP, mod the length of your character set, then take the character associated with that number:
         <br>
         <br>
-        a -> 00 (number associated with "a") + 01 (next number in the OTP) = 01 -> b (charachter associated with the number 01)
+        a -> 00 (number associated with "a") + 01 (next number in the OTP) = 01 -> b (character associated with the number 01)
         <br>
         <br>
-        Repeat this with every charachter of your plaintext, crossing out every number on the OTP that you've used.
+        Repeat this with every character of your plaintext, crossing out every number on the OTP that you've used.
         <br>
         <br>
         Congratulations! you now have a securely encrypted message! Go flush the pad, or save whats left if you care about the environment.
@@ -60,7 +60,7 @@
     <p>
         <ul>
             <li>OTP cryptography is only as secure as you keep the pads. Don't let anyone except for intended recipients see them, and destroy them after use!</li>
-            <li>If you have a number out of range of your key and thus not associated with any charachter, discard it. As tempting as it may be to modulo here, <a href="https://research.kudelskisecurity.com/2020/07/28/the-definitive-guide-to-modulo-bias-and-how-to-avoid-it/">modulo bias</a> will break your perfect security!</li>
+            <li>If you have a number out of range of your key and thus not associated with any character, discard it. As tempting as it may be to modulo here, <a href="https://research.kudelskisecurity.com/2020/07/28/the-definitive-guide-to-modulo-bias-and-how-to-avoid-it/">modulo bias</a> will break your perfect security!</li>
             <li>Almost every printer uses some form of <a href="https://en.wikipedia.org/wiki/Printer_tracking_dots">printer steganography</a>. This means that one-time pads printed on a normal printer can be tracked back to your printer!</li>
         </ul>
     </p>
