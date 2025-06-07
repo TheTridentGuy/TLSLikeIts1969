@@ -5,6 +5,9 @@
     --button-bg-color: #aaa;
     --button-bg-color-hover: #888;
     --button-fg-color: #fff;
+    --info: rgb(0, 211, 0);
+    --warning: rgb(224, 153, 0);
+    --error: rgb(192, 0, 0);
 }
 body {
     position: absolute;
@@ -74,6 +77,7 @@ body {
     text-align: center;
     font-weight: bold;
     cursor: pointer;
+    flex-basis: 100%;
 }
 .button:hover {
     background-color: var(--button-bg-color-hover);
@@ -112,4 +116,9 @@ input {
 }
 #otp-canvas {
     background-color: var(--color-light);
+}
+#message-box {
+    color: var(--color-light);
+    background-color: var(--error);
+    padding: 5px;
 }

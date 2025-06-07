@@ -55,9 +55,6 @@ function generate_otp(){
 $("#print").addEventListener("click", function(){
     print();
 });
-$("#generate").addEventListener("click", function(){
-    generate_otp();
-});
 $$("input").forEach((input) => {
     input.addEventListener("change", function() {
         generate_otp();
