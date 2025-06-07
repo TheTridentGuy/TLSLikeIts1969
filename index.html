@@ -8,8 +8,62 @@
 </head>
 <body>
     <h1>TLS Like It's 1969</h1>
+    <p>
+        Send secret messages to your friends like it's 1969! 
+    </p>
     <a href="/otp_normal.html">Use a normal printer</a>
     <br>
-    <a href="/otp_mxw01.html">Use an MXW01</a>
+    <a href="/otp_mxw01.html">Use a MXW01 thermal printer (WIP)</a>
+    <br>
+    <h3><a href="https://en.wikipedia.org/wiki/One-time_pad">One-Time Pad Cryptography:</a></h3>
+    <h5>UNBREAKABLE: OTP cryptography is one of the only truly unbreakable cryptographic algorithms in existence (of course, it can be broken by giving away the message or key.)</h5>
+    <p>
+        Using a pre-shared key greater than or equal to the length of your plaintext is a <a href="https://en.wikipedia.org/wiki/One-time_pad#Historical_uses">Cold War-era</a> method 
+        of sending unbreakable messages. With some modern web technology and the power of 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">WebCrypto</a> for 
+        a <a href="https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator">CSPRNG</a>,
+        you can easily genrate pads to share with your friends, so you can exercise your right to speak without uninvited listeners.
+        <br>
+        <br>
+        To acheive <a href="https://en.wikipedia.org/wiki/Information-theoretic_security">information-theoretic security</a>, a few conditions must be met:
+        <br>
+        <ul>
+            <li>The key must be at least as long as the plaintext.</li>
+            <li>The key must be truly random: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API">WebCrypto</a> takes care of this.</li>
+            <li>The no part of the key may ever be reused: cross out numbers after you use them!</li>
+            <li>The key must be exchanged securely, and kept secret: destroy your keys when you're done with them! May I suggest the toilet?</li>
+        </ul>
+    </p>
+    <h3>Usage:</h3>
+    <p>
+        A one-time pad will consist of a series of numbers in a given range, i.e. 01, 02, 03, 04, etc. Each pad is also named for your conveience. Print 2 copies of a pad, and give one to your friend over a secure channel, ideally in person.
+        You also need to agree on a set of charachters to support, i.e. a-z, space, 0-9 and some symbols (this can be done publicly). You will turn this into a key by aligning it with sequential numbers:
+        <table>
+            <tr><td>00</td><td>01</td><td>...</td><td>25</td><td>26</td><td>27</td><td>...</td><td>37</td><td>38</td><td>39</td><td>40</td></tr>
+            <tr><td>a</td><td>b</td><td>...</td><td>z</td><td>[space]</td><td>0</td><td>...</td><td>9</td><td>.</td><td>!</td><td>?</td></tr>
+        </table> 
+        TIP: keep this key in mind when you decide the range of your OTP. For example, our ideal range would be [0,40], and not a bit smaller.
+        <br>
+        <br>
+        Now to encode your message take the number of associated with the first charachter of your plaintext, and perform modular addition with the next number in your OTP, mod the length of your charachter set, then take the charachter associated with that number:
+        <br>
+        <br>
+        a -> 00 (number associated with "a") + 01 (next number in the OTP) = 01 -> b (charachter associated with the number 01)
+        <br>
+        <br>
+        Repeat this with every charachter of your plaintext, crossing out every number on the OTP that you've used.
+        <br>
+        <br>
+        Congratulations! you now have a securely encrypted message! Go flush the pad, or save whats left if you care about the environment.
+    </p>
+    <h3>Pitfalls/warnings:</h3>
+    <p>
+        <ul>
+            <li>OTP cryptography is only as secure as you keep the pads. Don't let anyone except for intended recipients see them, and destroy them after use!</li>
+            <li>If you have a number out of range of your key and thus not associated with any charachter, discard it. As tempting as it may be to modulo here, <a href="https://research.kudelskisecurity.com/2020/07/28/the-definitive-guide-to-modulo-bias-and-how-to-avoid-it/">modulo bias</a> will break your perfect security!</li>
+            <li>Almost every printer uses some form of <a href="https://en.wikipedia.org/wiki/Printer_tracking_dots">printer steganography</a>. This means that one-time pads printed on a normal printer can be tracked back to your printer!</li>
+        </ul>
+    </p>
+    <br>
 </body>
 </html>
